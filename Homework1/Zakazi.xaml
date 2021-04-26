@@ -1,0 +1,29 @@
+﻿<Window x:Class="Homework1.Zakazi"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Homework1"
+        mc:Ignorable="d"
+        Title="Zakazi" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150">
+            </ColumnDefinition>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Label Content="Новые заказы" FontSize="20" Background="Green" Height="50" VerticalAlignment="Top" HorizontalContentAlignment="Center">
+            
+        </Label>
+        <DataGrid Grid.Column="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Number" Binding="{Binding Path=Number}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Amount" Binding="{Binding Path=Amount}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Price" Binding="{Binding Path=Price}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+    </Grid>
+</Window>
