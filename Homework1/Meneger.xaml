@@ -13,21 +13,20 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Image Height="200" VerticalAlignment="Top" Margin="20" Source="manager.png">
-            
+
         </Image>
-        <StackPanel Grid.Column="1" Height="150" VerticalAlignment="Top" Margin="30">
-            <Label Height="40" Width="100" Content="Менеджер" FontSize="18">
-                
-            </Label>
-            <Label Height="40" Width="100" Content="login1" FontSize="18" x:Name="NameMenegar">
+        <Label Height="40" Width="100" Content="Менеджер" FontSize="18" Margin="20,239,130,140">
 
-            </Label>
-            <Label Content="Заказы" Grid.Column="1" Height="40" FontSize="19" Width="80" HorizontalAlignment="Left" Background="Green">
+        </Label>
+        <Label Height="40" Width="100" Content="login1" FontSize="18" x:Name="NameMenegar" Margin="130,239,20,140" RenderTransformOrigin="0.76,0.764">
 
-            </Label>
-        </StackPanel>
+        </Label>
+        <Label Content="Заказы" Grid.Column="1" Height="40" FontSize="19" Width="80" HorizontalAlignment="Left" Foreground="Green" VerticalAlignment="Top" Margin="10" FontFamily="Segoe UI Semibold">
 
-        <DataGrid Grid.Column="1" Height="180" Margin="0,161,0,78">
+        </Label>
+
+
+        <DataGrid Grid.Column="1" Margin="0,55,0,87">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Number" Binding="{Binding Path=Number}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}"></DataGridTextColumn>
@@ -38,7 +37,7 @@
 
         </DataGrid>
 
-        <Button Content="Оформить новый заказ" Height="50" FontSize="18" Background="Red" Grid.Column="1" VerticalAlignment="Bottom" Margin="10" Click="Button_Click">
+        <Button Content="Оформить новый заказ" Height="50" FontSize="18" Background="Red" Grid.Column="1" VerticalAlignment="Bottom" Margin="10" Click="Button_Click" Style="{StaticResource ButtonStyle}" Foreground="White">
 
         </Button>
     </Grid>

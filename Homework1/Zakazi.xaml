@@ -12,10 +12,10 @@
             </ColumnDefinition>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <Label Content="Новые заказы" FontSize="20" Background="Green" Height="50" VerticalAlignment="Top" HorizontalContentAlignment="Center">
+        <Label Content="Новые заказы" FontSize="20" Foreground="Green" Height="50" VerticalAlignment="Top" HorizontalContentAlignment="Center"  FontFamily="Segoe UI Semibold">
             
         </Label>
-        <DataGrid Grid.Column="1">
+        <DataGrid Grid.Column="1" Margin="0,99,0,10">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Number" Binding="{Binding Path=Number}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}"></DataGridTextColumn>
@@ -25,5 +25,7 @@
             </DataGrid.Columns>
 
         </DataGrid>
+        <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="63,52,0,0" VerticalAlignment="Top" Width="377">
+        </ComboBox>
     </Grid>
 </Window>

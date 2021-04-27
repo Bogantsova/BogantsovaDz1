@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Homework1.Entites;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,7 @@ namespace Homework1
     /// </summary>
     public partial class MainWindow : Window
     {
-       
+
 
         public MainWindow()
         {
@@ -29,33 +30,57 @@ namespace Homework1
 
         private void MainCheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            //if (MainCheckBox.IsChecked == true)
-            //{
-            //    MainPaswordBox.Password = "00";
-            //}
-            //else
-            //    MainPaswordBox.Password = "*";
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if(MainPasswordBox.Password == "tuptup" && MainTextBox.Text == "login1")
+            String Login = MainTextBox.Text;
+            String password = MainPasswordBox.Password;
+
+            try
             {
-                Meneger Meneger = new Meneger();
-                Meneger.Show();
-                
+                using (var bd = new Model1())
+                {
+                    var user = bd.Users.FirstOrDefault(u => u.Login == MainTextBox.Text && u.Password == MainPasswordBox.Password);
+                    if (user != null)
+                    {
+
+                        UserSingleton.Instance().Login = Login;
+                        Meneger menegerWindow = new Meneger();
+                        menegerWindow.Show();
+                        this.Close();
+
+                    }
+                    else
+                        throw new Exception("");
+
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("User not fount", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            }
+        private void MainCheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            if (MainCheckBox.IsChecked.Value)
+            {
+                MainPaaswordTextBox.Text = MainPasswordBox.Password;
+                MainPaaswordTextBox.Visibility = Visibility.Visible;
+                MainPasswordBox.Visibility = Visibility.Hidden;
             }
             else
             {
-                
-                MessageBox.Show("User not fount");
+                MainPasswordBox.Password = MainPaaswordTextBox.Text;
+                MainPaaswordTextBox.Visibility = Visibility.Hidden;
+                MainPasswordBox.Visibility = Visibility.Visible;
             }
-            if (MainPasswordBox.Password == null || MainTextBox.Text == null) 
-            {
-                throw new Exception("Empty field");
-            }
-           
         }
-
     }
-}
+        }
+    
+            
+    
+

@@ -8,8 +8,8 @@
         Title="MainWindow" Height="350" Width="500">
     <Grid>
         <StackPanel Height="300" Width="340" Orientation="Vertical">
-            <Label Height="50" Width="100" HorizontalAlignment="Left" Margin="20" Content="Вход" FontSize="22"> 
-                
+            <Label Height="50" Width="100" HorizontalAlignment="Left" Margin="20" Content="Вход" FontSize="22" Foreground="Green" FontFamily="Segoe UI Semibold">
+
             </Label>
             <StackPanel Width="340" Orientation="Horizontal">
                 <StackPanel Width="70" HorizontalAlignment="Left">
@@ -21,32 +21,34 @@
                     </Label>
                 </StackPanel>
                 <StackPanel Width="150" HorizontalAlignment="Right">
-                    <TextBox Height="30" Width="140" Margin="5" x:Name="MainTextBox">
+                    <TextBox Height="30" Width="140" Margin="5" x:Name="MainTextBox" Style="{StaticResource TextStyle}">
 
                     </TextBox>
-                    <PasswordBox  Height="30" Width="140" Margin="5" x:Name="MainPasswordBox">
+                    <PasswordBox  Height="30" Width="140" Margin="5" x:Name="MainPasswordBox" Style="{StaticResource PasswordStyle}"/>
 
-                    </PasswordBox>
-                    
+
                 </StackPanel>
-                
+
             </StackPanel>
             <StackPanel>
-                
+
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label Width="135" Height="30" Content="Показать пароль" FontSize="16" HorizontalAlignment="Center">
 
-            </Label>
-                <CheckBox VerticalAlignment="Center" x:Name="MainCheckBox" Checked="MainCheckBox_Checked">
+                </Label>
+                <CheckBox VerticalAlignment="Center" x:Name="MainCheckBox" Click="MainCheckBox_Click">
 
                 </CheckBox>
 
             </StackPanel>
 
-            <Button Height="40" Width="90" VerticalAlignment="Bottom" Content="Войти" FontSize="19" Margin="40" Background="Red" Click="Button_Click">
-             </Button>
-            
-        </StackPanel>  
+            <Button Height="40" Width="90" VerticalAlignment="Bottom" Content="Войти" FontSize="19" Margin="40" Background="Red" Click="Button_Click" Style="{StaticResource ButtonStyle}"  Foreground="White">
+            </Button>
+
+        </StackPanel>
+        <TextBox HorizontalAlignment="Left" Height="31" Margin="152,145,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="137" Name="MainPaaswordTextBox" Visibility="Hidden" Style="{StaticResource TextStyle}"/>
+       
+
     </Grid>
 </Window>
