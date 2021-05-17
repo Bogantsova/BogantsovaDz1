@@ -1,0 +1,37 @@
+﻿<Window x:Class="Homework1.Zakazi"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Homework1"
+        mc:Ignorable="d"
+        Title="Zakazi" Height="450" Width="800" IsVisibleChanged="Page_IsVisiblechaged">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150">
+            </ColumnDefinition>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Label Content="Новые заказы" FontSize="20" Foreground="Green" Height="50" VerticalAlignment="Top" HorizontalContentAlignment="Center"  FontFamily="Segoe UI Semibold">
+
+        </Label>
+        <DataGrid Grid.Column="1" Margin="63,182,170,79" x:Name="DataGridNewOrder" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Number" Binding="{Binding Path=Number}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Amount" Binding="{Binding Path=Amount}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Price" Binding="{Binding Path=Price}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="226,76,0,0" VerticalAlignment="Top" Width="120"  DisplayMemberPath="SurName" SelectedItem="{Binding SurName}" x:Name="ComboBoxClient">
+        </ComboBox>
+        <Label Content="Название заказа" Grid.Column="1" HorizontalAlignment="Left" Margin="120,37,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding OrderName}" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="226,40,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Label Content="Клиент" Grid.Column="1" HorizontalAlignment="Left" Margin="120,76,0,0" VerticalAlignment="Top"/>
+        <Label Content="Продукт" Grid.Column="1" HorizontalAlignment="Left" Margin="120,120,0,0" VerticalAlignment="Top"/>
+        <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="226,120,0,0" VerticalAlignment="Top" Width="120"  SelectedItem="{Binding Name}" x:Name="ComboBoxProduct" DisplayMemberPath="Name"/>
+        <Button Content="Сохранить" Grid.Column="1" HorizontalAlignment="Left" Margin="530,363,0,0" VerticalAlignment="Top" Width="73" Height="30" Click="Button_Click"/>
+    </Grid>
+</Window>
